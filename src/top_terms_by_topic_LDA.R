@@ -41,7 +41,7 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
   # get the top ten terms for each topic
   top_terms <- topics  %>% # take the topics data frame and..
     group_by(topic) %>% # treat each topic as a different group
-    top_n(50, beta) %>% # get the top 10 most informative words
+    top_n(10, beta) %>% # get the top 10 most informative words
     ungroup() %>% # ungroup
     arrange(topic, -beta) # arrange words in descending informativeness
   
