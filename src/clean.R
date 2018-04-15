@@ -13,7 +13,7 @@ clean <- function(input_text, sw = c("a"))
   # very informative in hotel reviews
   ## custom_stop_words <- tibble(word = c("hotel", "room"))
   sw = c("author", "oper", "function", "predomin")
-  custom_stop_words <-tibble(word = sw)
+  custom_stop_words <-tibble(word = c("author", "oper", "function", "predomin"))
 
   # remove stopwords
   reviewsDTM_tidy_cleaned <- reviewsDTM_tidy %>% # take our tidy dtm and...
