@@ -12,8 +12,7 @@ clean <- function(input_text, sw = c("a"))
   # I'm going to add my own custom stop words that I don't think will be
   # very informative in hotel reviews
   ## custom_stop_words <- tibble(word = c("hotel", "room"))
-  sw = c("author", "oper", "function", "predomin")
-  custom_stop_words <-tibble(word = c("author", "oper", "function", "predomin"))
+  custom_stop_words <- tibble(word = sw)
 
   # remove stopwords
   reviewsDTM_tidy_cleaned <- reviewsDTM_tidy %>% # take our tidy dtm and...
