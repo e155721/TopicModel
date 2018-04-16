@@ -51,6 +51,6 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
     ggplot(aes(term, beta, fill = factor(topic))) + # plot beta by theme
     geom_col(show.legend = FALSE) + # as a bar plot
     facet_wrap(~ topic, scales = "free") + # which each topic in a seperate plot
-    labs(x = NULL, y = "Beta") + # no x label, change y label 
+    labs(x = NULL, y = "Appearance Rate of Word") + # no x label, change y label 
     coord_flip() # turn bars sideways
 }

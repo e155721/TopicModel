@@ -7,6 +7,8 @@ input_text <- read_file("../data/a-200000.txt")
 input_text <- clean(input_text)
 
 lda <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = F)
+input_text <- read_file("../data/a")
+input_text <- clean(input_text)
 topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, user_model = lda)
 
 pdf(file = "../plot/Rplot.pdf")
