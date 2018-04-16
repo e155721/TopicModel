@@ -15,7 +15,7 @@ pdf(file = "../plot/Rplot-2.pdf")
 plot(topics)
 dev.off()
 
-topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda)
+topics <- top_terms_by_topic_LDA(input_text, user_model = lda)
 pdf(file = "../plot/Rplot.pdf")
 plot(topics)
 dev.off()
