@@ -9,6 +9,7 @@ library(SnowballC) # for stemming
 # of topics, using LDA
 top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataframe
                                    plot = T, # return a plot? TRUE by defult
+                                   terms = F,
                                    user_model = NULL,
                                    user_alpha = 0,
                                    number_of_topics = 4) # number of topics (4 by default)
@@ -38,6 +39,16 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
     return(lda)
   topics <- tidy(lda, matrix = "beta")
   
+  if(terms == T) {
+  terms <- topics  %>% # take the topics data frame and..
+    group_by(topic) %>% # treat each topic as a different group
+    ungroup() %>% # ungroup
+    arrange(topic, -beta) # arrange words in descending informativeness
+
+  return(terms)
+  }
+    
+
   # get the top ten terms for each topic
   top_terms <- topics  %>% # take the topics data frame and..
     group_by(topic) %>% # treat each topic as a different group
