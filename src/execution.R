@@ -3,15 +3,31 @@ source("readFile.R")
 source("clean.R")
 
 if(0) {
-input_text <- read_file("../data/a-200000.txt")
+input_text <- read_file("../data/allergy-and-psychiatry_200000")
 input_text <- clean(input_text)
 
 lda <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = F)
 }
 
-if(0){
+if(0) {
 file_path <- "../data/"
-file_name <- "allergy-and-psychiatry_2"
+file_name <- "allergy-and-psychiatry_200000"
+plot_path <- "../plot/"
+
+file_path <- paste(file_path, file_name, sep = "")
+input_text <- read_file(file_path)
+input_text <- clean(input_text)
+
+topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T)
+path <- paste(plot_path, file_name, ".pdf", sep = "")
+pdf(file = path)
+plot(topics)
+dev.off()
+}
+
+if(1){
+file_path <- "../data/"
+file_name <- "allergy-and-psychiatry_2000"
 plot_path <- "../plot/"
 
 file_path <- paste(file_path, file_name, sep = "")
@@ -30,17 +46,3 @@ pdf(file = path)
 plot(topics)
 dev.off()
 }
-
-file_path <- "../data/"
-file_name <- "allergy-and-psychiatry_200000"
-plot_path <- "../plot/"
-
-file_path <- paste(file_path, file_name, sep = "")
-input_text <- read_file(file_path)
-input_text <- clean(input_text)
-
-topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T)
-path <- paste(plot_path, file_name, ".pdf", sep = "")
-pdf(file = path)
-plot(topics)
-dev.off()
