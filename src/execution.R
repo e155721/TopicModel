@@ -12,8 +12,7 @@ input_text <- read_file("../data/a")
 input_text <- clean(input_text)
 }
 
-
-input_text <- read_file("../data/a-tail-2")
+input_text <- read_file("../data/a-tail-1000")
 input_text <- clean(input_text)
 
 topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T)
