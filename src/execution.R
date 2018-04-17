@@ -27,7 +27,7 @@ dev.off()
 
 if(1){
 file_path <- "../data/"
-file_name <- "allergy-and-psychiatry_2000"
+file_name <- "allergy-and-psychiatry_2"
 plot_path <- "../plot/"
 
 file_path <- paste(file_path, file_name, sep = "")
