@@ -11,7 +11,7 @@ lda <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = F)
 
 if(1){
 file_path <- "../data/"
-file_name <- "a-tail-1000"
+file_name <- "allergy-and-psychiatry_2"
 plot_path <- "../plot/"
 
 file_path <- paste(file_path, file_name, sep = "")
