@@ -9,24 +9,23 @@ input_text <- clean(input_text)
 lda <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = F)
 }
 
-if(1) {
+if(0) {
 file_path <- "../data/"
-file_name <- "a"
+file_name <- "allergy-and-psychiatry_200000"
 plot_path <- "../plot/"
 
 file_path <- paste(file_path, file_name, sep = "")
 input_text <- read_file(file_path)
 input_text <- clean(input_text)
 
-i <- 2
-topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T, user_model = lda)
-path <- paste(plot_path, file_name, "_", i, ".pdf", sep = "")
+lda <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T)
+path <- paste(plot_path, file_name, ".pdf", sep = "")
 pdf(file = path)
 plot(topics)
 dev.off()
 }
 
-if(0){
+if(1){
 file_path <- "../data/"
 file_name <- "allergy-and-psychiatry_2"
 plot_path <- "../plot/"
