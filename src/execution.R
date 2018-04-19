@@ -9,7 +9,10 @@ input_text <- clean(input_text)
 lda <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = F)
 }
 
-if(1) {
+terms <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T, terms = T)
+write.table(terms, "hoge.txt", quote=F, col.names=F, append=T)
+
+if(0) {
 file_path <- "../data/"
 file_name <- "allergy"
 plot_path <- "../plot/"
@@ -18,7 +21,7 @@ file_path <- paste(file_path, file_name, sep = "")
 input_text <- read_file(file_path)
 input_text <- clean(input_text)
 
-for (i in 2:5) {
+for (i in 5:10) {
 topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
 
 path <- paste(plot_path, file_name, "_", i, ".pdf", sep = "")
