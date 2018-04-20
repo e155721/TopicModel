@@ -1,5 +1,4 @@
 #!/bin/zsh
 
 file=$1
-<"$file" | sed -e 's/@//g' | sed -e 's/^[A-Z]/@/' | sed -e 's/^[ ]*//' | tr '\n' ' ' | tr '@' '\n' | grep \^'B ' | grep -v '\- IM' | sed -e 's/B  -//' >"$file:r".clean
-rm "$file"
+<"$file" | sed -e 's/@//g' | sed -e 's/^/@/' | sed -e 's/^@[ ]//' | sed -e 's/^[ ]*//' | tr '\n' ' ' | tr '@' '\n' | grep \^'AB' >"$file:r".clean
