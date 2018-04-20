@@ -40,15 +40,14 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
   topics <- tidy(lda, matrix = "beta")
   
   if(terms == T) {
-  terms <- topics  %>% # take the topics data frame and..
-    group_by(topic) %>% # treat each topic as a different group
-    ungroup() %>% # ungroup
-    arrange(topic, -beta) # arrange words in descending informativeness
-
-  return(terms)
-  }
+    terms <- topics  %>% # take the topics data frame and..
+      group_by(topic) %>% # treat each topic as a different group
+      ungroup() %>% # ungroup
+      arrange(topic, -beta) # arrange words in descending informativeness
     
-
+    return(terms)
+  }
+  
   # get the top ten terms for each topic
   top_terms <- topics  %>% # take the topics data frame and..
     group_by(topic) %>% # treat each topic as a different group
