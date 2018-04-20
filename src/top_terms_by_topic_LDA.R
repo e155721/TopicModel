@@ -24,7 +24,6 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
   DTM <- DTM[unique_indexes,] # get a subset of only those indexes
   
   #preform LDA & get the words/topic in a tidy text format
-  
   if(class(user_model) == "LDA_VEM"  ) {
     lda <- LDA(DTM, model = user_model,
                control = list(seed = 1234, estimate.beta = TRUE, verbose = 1, initialize = "model"))
