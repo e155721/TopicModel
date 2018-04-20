@@ -9,7 +9,7 @@ if(0) {
   lda <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = F)
 }
 
-if(0) {
+if(1) {
   file_path <- "../data/"
   file_name <- "a.csv"
   plot_path <- "../plot/"
