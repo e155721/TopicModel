@@ -18,7 +18,8 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
-  topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T)
+  #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T)
+  topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda) 
   path <- paste(plot_path, file_name, ".pdf", sep = "")
   pdf(file = path)
   plot(topics)
