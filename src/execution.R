@@ -42,7 +42,7 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
 
-  load("../data/list_of_lda.R")
+  load("../data/list_of_lda.RData")
 
   for (i in 2:10) {
     topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[i-1])
