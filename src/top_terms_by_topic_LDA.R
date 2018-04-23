@@ -26,7 +26,7 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
   #preform LDA & get the words/topic in a tidy text format
   if(class(user_model) == "LDA_VEM"  ) {
     lda <- LDA(DTM, model = user_model,
-               control = list(seed = 1234, estimate.beta = TRUE, verbose = 1, initialize = "model"))
+                   control = list(seed = 1234, estimate.beta = TRUE, verbose = 1, initialize = "model"))
   }
   else if(user_alpha != 0) {
     lda <- LDA(DTM, k = number_of_topics, control = list(seed = 1234, verbose = 1, alpha = user_alpha))
