@@ -34,8 +34,8 @@ if(0) {
 
 if(1) {
   file_path <- "../data/"
-  #file_name <- "alg"
-  file_name <- "allergy"
+  file_name <- "alg"
+  #file_name <- "allergy"
   plot_path <- "../plot/"
 
   file_path <- paste(file_path, file_name, sep = "")
@@ -45,8 +45,7 @@ if(1) {
   load("../data/list_of_lda.RData")
 
   for (i in 2:10) {
-    lda <- list_of_lda[i-1]
-    topics <- top_terms_by_topic_LDA(input_text, user_model = lda)
+    topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
     path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
     pdf(file = path)
     plot(topics)
