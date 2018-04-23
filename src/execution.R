@@ -19,7 +19,7 @@ if(1) {
   input_text <- clean(input_text)
   
   list_of_topics <- list(10)
-  for (i in 2:10) {
+  for (i in 11:20) {
     topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
     # topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda) 
     path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
@@ -29,5 +29,5 @@ if(1) {
     list_of_topics[i] <- topics
   }
   
-  save.image("list_of_topics.RData")
+  save.image("list_of_topics-2.RData")
 }
