@@ -33,6 +33,8 @@ if(0) {
 }
 
 if(1) {
+  load("../data/list_of_lda.RData")
+
   file_path <- "../data/"
   file_name <- "alg"
   #file_name <- "allergy"
@@ -41,8 +43,6 @@ if(1) {
   file_path <- paste(file_path, file_name, sep = "")
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
-
-  load("../data/list_of_lda.RData")
 
   for (i in 2:10) {
     topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
