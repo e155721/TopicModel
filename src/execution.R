@@ -42,10 +42,13 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
 
-  list_of_lda <- list(9)
-  for (i in 2:10) {
-    list_of_lda[i-1] <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = F)
-  }
+  load("../data/list_of_lda.R")
 
-  save.image("list_of_lda.RData")
+  for (i in 2:10) {
+    topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[i-1])
+    path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
+    pdf(file = path)
+    plot(topics)
+    dev.off()
+  }
 }
