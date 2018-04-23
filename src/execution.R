@@ -55,7 +55,8 @@ if(0) {
 
 if(1) {
   file_path <- "../data/"
-  file_name <- "psychiatry"
+  file_name <- "psy"
+  #file_name <- "psychiatry"
   #file_name <- "alg"
   #file_name <- "allergy"
   plot_path <- "../plot/"
@@ -64,11 +65,27 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
 
-  for (i in 2:20) {
-    topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
-    path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
+  if(0) {
+  list_of_psychiatry_lda <- list(9)
+  # list_of_allergy_lda <- list(9)
+  for (i in 2:10) {
+   list_of_psychiatry_lda[i-1] <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
+  #list_of_allergy_lda[i-1] <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
+  }
+}
+
+
+  for (i in 2:10) {
+    topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_allergy_lda[[i-1]])
+    path <- paste(plot_path, file_name, "_use_model_allergy", "_k_", i, ".pdf", sep = "")
+    #topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_psychiatry_lda[[i-1]])
+    #path <- paste(plot_path, file_name, "_use_model_psychiatry", "_k_", i, ".pdf", sep = "")
     pdf(file = path)
     plot(topics)
     dev.off()
   }
+
+
+
+
 }
