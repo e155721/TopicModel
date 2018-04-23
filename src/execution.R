@@ -18,6 +18,7 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
+  list_of_topics <- list(10)
   for (i in 2:10) {
     topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
     # topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda) 
@@ -25,5 +26,8 @@ if(1) {
     pdf(file = path)
     plot(topics)
     dev.off()
+    list_of_topics[i] <- topics
   }
+  
+  save.image("list_of_topics.RData")
 }
