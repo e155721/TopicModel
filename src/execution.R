@@ -41,7 +41,7 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
-  for (i in 11:20) {
+  for (i in 2:20) {
     topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
     # topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda) 
     path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
