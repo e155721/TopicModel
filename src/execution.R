@@ -45,7 +45,8 @@ if(1) {
   load("../data/list_of_lda.RData")
 
   for (i in 2:10) {
-    topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[i-1])
+    lda <- list_of_lda[i-1]
+    topics <- top_terms_by_topic_LDA(input_text, user_model = lda)
     path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
     pdf(file = path)
     plot(topics)
