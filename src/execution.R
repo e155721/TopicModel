@@ -55,7 +55,7 @@ if(0) {
 
 if(1) {
   file_path <- "../data/"
-  file_name <- "psy"
+  file_name <- "psychiatry"
   #file_name <- "alg"
   #file_name <- "allergy"
   plot_path <- "../plot/"
