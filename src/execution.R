@@ -9,7 +9,7 @@ if(0) {
   lda <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = F)
 }
 
-if(1) {
+if(0) {
   file_path <- "../data/"
   file_name <- "allergy"
   plot_path <- "../plot/"
@@ -30,4 +30,23 @@ if(1) {
   }
   
   save.image("list_of_topics-2.RData")
+}
+
+if(1) {
+  file_path <- "../data/"
+  file_name <- "alg"
+  plot_path <- "../plot/"
+  
+  file_path <- paste(file_path, file_name, sep = "")
+  input_text <- read_file(file_path)
+  input_text <- clean(input_text)
+  
+  for (i in 11:20) {
+    topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
+    # topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda) 
+    path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
+    pdf(file = path)
+    plot(topics)
+    dev.off()
+  }
 }
