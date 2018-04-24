@@ -45,8 +45,8 @@ if(1) {
   
   i <- 20
     topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
-    path <- paste(plot_path, file_name, "_k_", i, ".bmp", sep = "")
-    bmp(file = path, width = 1000, height = 1000)
+    path <- paste(plot_path, file_name, "_k_", i, ".pictex", sep = "")
+    pictex(file = path, width = 1000, height = 1000)
     plot(topics)
     dev.off()
 }
