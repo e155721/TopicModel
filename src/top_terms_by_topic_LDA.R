@@ -49,7 +49,7 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
   
   # get the top ten terms for each topic
   top_terms <- topics  %>% # take the topics data frame and..
-    top_n(30, beta) %>% # get the top 10 most informative words
+    top_n(10, beta) %>% # get the top 10 most informative words
     arrange(topic, -beta) # arrange words in descending informativeness
   
   # plot the top ten terms for each topic in order
