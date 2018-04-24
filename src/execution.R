@@ -35,17 +35,20 @@ if(0) {
 if(1) {
   
   file_path <- "../data/"
-  file_name <- "a.csv"
   #file_name <- "alg"
-  #file_name <- "allergy"
+  file_name <- "allergy"
   plot_path <- "../plot/"
   
   file_path <- paste(file_path, file_name, sep = "")
-  input_text <- read_csv(file_path)
+  input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
   i = 3
-  top_terms_by_topic_LDA(input_text, number_of_topics = i)
+  topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
+  path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
+  pdf(file = path, width = 500)
+  plot(topics)
+  dev.off()
   
   if(0) {
     for (i in 2:10) {
