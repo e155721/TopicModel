@@ -32,8 +32,7 @@ if(0) {
   save.image("list_of_topics-2.RData")
 }
 
-if(0) {
-  load("../data/list_of_lda.RData")
+if(1) {
   
   file_path <- "../data/"
   file_name <- "alg"
@@ -44,16 +43,15 @@ if(0) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
-  for (i in 2:10) {
-    topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
-    path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
-    pdf(file = path)
+  i <- 20
+    topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
+    path <- paste(plot_path, file_name, "_k_", i, ".jpg", sep = "")
+    jpeg(file = path)
     plot(topics)
     dev.off()
-  }
 }
 
-if(1) {
+if(0) {
   file_path <- "../data/"
   #file_name <- "psy"
   #file_name <- "psychiatry"
