@@ -46,7 +46,7 @@ if(1) {
   i = 3
   topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
   path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
-  pdf(file = path, width = 100, height = 200)
+  pdf(file = path)
   plot(topics)
   dev.off()
   
