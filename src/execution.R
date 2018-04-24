@@ -4,7 +4,8 @@ source("clean.R")
 
 if(1) {
   file_path <- "../data/"
-  file_name <- "allergy_wiki"
+  #file_name <- "allergy_wiki"
+  file_name <- "gundam_wiki"
   plot_path <- "../plot/"
   
   file_path <- paste(file_path, file_name, sep = "")
@@ -13,6 +14,7 @@ if(1) {
   
   for (i in 2:20) {
     #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
+    #path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
     topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = list_of_lda[[i-1]])
     path <- paste(plot_path, file_name, "_used", "_k_", i, ".pdf", sep = "")
     pdf(file = path)
