@@ -35,8 +35,8 @@ if(0) {
 if(1) {
   
   file_path <- "../data/"
-  #file_name <- "alg"
-  file_name <- "allergy"
+  file_name <- "alg"
+  #file_name <- "allergy"
   plot_path <- "../plot/"
   
   file_path <- paste(file_path, file_name, sep = "")
