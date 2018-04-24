@@ -44,9 +44,10 @@ if(1) {
   input_text <- clean(input_text)
   
   i <- 30
-  topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
-  path <- paste(plot_path, file_name, "_k_", i, ".bmp", sep = "")
-  bmp(file = path, width = 1000, height = 1000)
+  #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
+  topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, user_alpha = 3.99923)
+  path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
+  pdf(file = path, width = 1000, height = 1000)
   plot(topics)
   dev.off()
 }
