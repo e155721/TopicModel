@@ -14,7 +14,7 @@ if(1) {
   for (i in 2:20) {
     topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
     #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda)
-    path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
+    path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
     pdf(file = path)
     plot(topics)
     dev.off()
