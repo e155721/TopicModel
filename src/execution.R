@@ -43,7 +43,7 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
 
-  i <- 20
+  i <- 10
   #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
   topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, user_alpha = 3.99923)
   path <- paste(plot_path, file_name, "_k_", i, ".bmp", sep = "")
