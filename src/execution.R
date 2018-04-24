@@ -13,7 +13,7 @@ if(1) {
   
   for (i in 2:20) {
     #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
-    topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = list_of_lda[i-1])
+    topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = list_of_lda[[i-1]])
     path <- paste(plot_path, file_name, "_used", "_k_", i, ".pdf", sep = "")
     pdf(file = path)
     plot(topics)
