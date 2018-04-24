@@ -43,9 +43,9 @@ if(1) {
   file_path <- paste(file_path, file_name, sep = "")
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
-
+  
   i = 3
-  topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, user_alpha = 2.80057)
+  topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
   path <- paste(plot_path, file_name, "_k_", i, ".pdf", sep = "")
   pdf(file = path)
   plot(topics)
