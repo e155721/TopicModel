@@ -4,6 +4,7 @@ source("clean.R")
 
 if(1) {
   #load("../data/list_of_lda.RData")
+  #load("../data/list_of_lda_11-20.RData")
   
   file_path <- "../data/"
   #file_name <- "data.txt"
