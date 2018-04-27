@@ -15,10 +15,10 @@ if(1) {
   input_text <- clean(input_text)
 
   for (i in 2:10) {
-    topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
-    path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
-    #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = list_of_lda[[i-1]])
-    #path <- paste(plot_path, file_name, "_used", "_k_", i, ".pdf", sep = "")
+    #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = T)
+    #path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
+    topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = list_of_lda[[i-1]])
+    path <- paste(plot_path, file_name, "_used", "_k_", i, ".pdf", sep = "")
     pdf(file = path)
     plot(topics)
     dev.off()
