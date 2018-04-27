@@ -34,8 +34,8 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
 
-  list_of_lda <- list(19)
-  for (i in 2:20) {
+  list_of_lda <- list(9)
+  for (i in 2:10) {
     lda <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = F)
     # topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda)
 
