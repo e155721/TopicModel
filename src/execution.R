@@ -2,7 +2,7 @@ source("top_terms_by_topic_LDA.R")
 source("readFile.R")
 source("clean.R")
 
-if(1) {
+if(0) {
   file_path <- "../data/"
   file_name <- "pubmed_result.clean"
   #file_name <- "alg"
@@ -25,9 +25,9 @@ if(1) {
   }
 }
 
-if(0) {
+if(1) {
   file_path <- "../data/"
-  file_name <- "allergy"
+  file_name <- "data.txt"
   plot_path <- "../plot/"
 
   file_path <- paste(file_path, file_name, sep = "")
