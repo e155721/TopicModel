@@ -3,6 +3,8 @@ source("readFile.R")
 source("clean.R")
 
 if(1) {
+  load("../data/list_of_lda.RData")
+
   file_path <- "../data/"
   file_name <- "data.txt"
   #file_name <- "pubmed_result.clean"
