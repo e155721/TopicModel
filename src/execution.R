@@ -40,7 +40,6 @@ if(0) {
   list_of_lda <- list(19)
   for (i in 11:20) {
     lda <- top_terms_by_topic_LDA(input_text, number_of_topics = i, plot = F)
-    # topics <- top_terms_by_topic_LDA(input_text, number_of_topics = 2, plot = T, user_model = lda)
     list_of_lda[i-1] <- lda
   }
   save.image("list_of_lda_11-20.RData")
