@@ -2,7 +2,7 @@ source("top_terms_by_topic_LDA.R")
 source("readFile.R")
 source("clean.R")
 
-if(0) {
+if(1) {
   #load("../data/list_of_lda.RData")
   
   file_path <- "../data/"
@@ -16,7 +16,7 @@ if(0) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
-  for (i in 2:10) {
+  for (i in 11:20) {
     topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
     path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
     #topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
@@ -27,7 +27,7 @@ if(0) {
   }
 }
 
-if(1) {
+if(0) {
   file_path <- "../data/"
   file_name <- "data.txt"
   plot_path <- "../plot/"
