@@ -22,6 +22,7 @@ if(1) {
   i <- 4
   topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
   path <- paste(plot_path, file_name, "_used", "_k_", i, ".pdf", sep = "")
+  print(topics)
   
   if (0) {
     for (i in 11:20) {
