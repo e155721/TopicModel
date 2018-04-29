@@ -26,6 +26,7 @@ if(1) {
     lda_result <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
     path <- paste(plot_path, file_name, "_used", "_k_", i, ".pdf", sep = "")
     pdf(file = path)
+    plot(lda_result[[1]])
     dev.off()
     path <- paste("top_terms", "_k_", i, ".txt")
     write.table(lda_result[[2]], file=path)
