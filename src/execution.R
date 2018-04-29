@@ -3,13 +3,13 @@ source("readFile.R")
 source("clean.R")
 
 if(1) {
-  load("../data/list_of_lda.RData")
+  load("../data/list_of_lda_02-10.RData")
   #load("../data/list_of_lda_11-20.RData")
   
   file_path <- "../data/"
   #file_name <- "data_500000.txt"
   #file_name <- "a.csv"
-  file_name <- "pubmed_result.clean"
+  file_name <- "pubmed_trending-articles.txt"
   #file_name <- "alg"
   #file_name <- "allergy_wiki"
   plot_path <- "../plot/"
