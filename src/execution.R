@@ -28,7 +28,7 @@ if(1) {
     plot(lda_result[[1]])
     dev.off()
     #path <- paste(plot_path, "top_terms", "_unused", "_k_", i, ".txt")
-    path <- paste(plot_path, "top_terms", "_used", "_k_", i, ".txt")
+    path <- paste(plot_path,"top_terms","_used","_k_",i,".txt")
     write.table(lda_result[[2]], file=path)
   }
 }
