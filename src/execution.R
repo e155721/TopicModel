@@ -19,7 +19,6 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
-  list_of_top_terms <- list(9)
   for (i in 2:10) {
     #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
     #path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
