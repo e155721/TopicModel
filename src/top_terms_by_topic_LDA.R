@@ -54,5 +54,5 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
     labs(x = NULL, y = "Appearance Rate of Word") + # no x label, change y label 
     coord_flip() # turn bars sideways
   
-  write.table(top_terms, file="top_terms.txt")
+  return(top_terms)
 }
