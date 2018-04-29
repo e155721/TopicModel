@@ -38,15 +38,6 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
     return(lda)
   topics <- tidy(lda, matrix = "beta")
   
-  if(terms == T) {
-    terms <- topics  %>% # take the topics data frame and..
-      group_by(topic) %>% # treat each topic as a different group
-      ungroup() %>% # ungroup
-      arrange(topic, -beta) # arrange words in descending informativeness
-    
-    return(terms)
-  }
-  
   # get the top ten terms for each topic
   top_terms <- topics %>% # take the topics data frame and..
     group_by(topic) %>% # treat each topic as a different group
@@ -62,4 +53,6 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
     facet_wrap(~ topic, scales = "free_y") + # which each topic in a seperate plot
     labs(x = NULL, y = "Appearance Rate of Word") + # no x label, change y label 
     coord_flip() # turn bars sideways
+  
+  write.table(top_terms, file="top_terms.txt")
 }
