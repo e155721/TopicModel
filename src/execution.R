@@ -20,7 +20,6 @@ if(1) {
   input_text <- clean(input_text)
   
   list_of_top_terms <- list(9)
-  
   for (i in 2:10) {
     #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
     #path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
@@ -29,9 +28,9 @@ if(1) {
     pdf(file = path)
     plot(lda_result[[1]])
     dev.off()
-    list_of_top_terms <- lda_result[[2]]
+    list_of_top_terms[[i-1]] <- lda_result[[2]]
   }
-  write.table(list_of_top_terms[[2]], file="top_terms.txt")
+  write.table(list_of_top_terms, file="top_terms.txt")
 }
 
 if(0) {
