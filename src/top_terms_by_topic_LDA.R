@@ -54,5 +54,8 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
     labs(x = NULL, y = "Appearance Rate of Word") + # no x label, change y label 
     coord_flip() # turn bars sideways
   
-  return(top_terms)
+  result <- list(2)
+  result[[1]] <- topics
+  result[[2]] <- top_terms
+  return(result)
 }

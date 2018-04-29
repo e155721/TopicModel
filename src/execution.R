@@ -3,36 +3,36 @@ source("readFile.R")
 source("clean.R")
 
 if(1) {
-  #load("../data/list_of_lda_02-10.RData")
+  load("../data/list_of_lda_02-10.RData")
   #load("../data/list_of_lda_11-20.RData")
   
   file_path <- "../data/"
   #file_name <- "data_500000.txt"
-  file_name <- "a.csv"
-  #file_name <- "pubmed_trending-articles.txt"
+  #file_name <- "a.csv"
+  file_name <- "pubmed_trending-articles.txt"
   #file_name <- "alg"
   #file_name <- "allergy_wiki"
   plot_path <- "../plot/"
   
   file_path <- paste(file_path, file_name, sep = "")
-  input_text <- read_csv(file_path)$text
-  #input_text <- read_file(file_path)
+  #input_text <- read_csv(file_path)$text
+  input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
-  i <- 4
-  top_terms <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
-  write.table(top_terms, file="top_terms.txt")
+  top_terms_list <- list(9)
   
-  if (0) {
-    for (i in 11:20) {
-      topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
-      path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
-      #topics <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
-      #path <- paste(plot_path, file_name, "_used", "_k_", i, ".pdf", sep = "")
+  if (1) {
+    for (i in 2:10) {
+      #topics <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
+      #path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
+      lda_result <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
+      path <- paste(plot_path, file_name, "_used", "_k_", i, ".pdf", sep = "")
       pdf(file = path)
-      plot(topics)
+      plot(lda_result[[1]])
       dev.off()
+      top_terms_list <- lda_result[[2]]
     }
+    write.table(top_terms_list, file="top_terms.txt")
   }
 }
 
