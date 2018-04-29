@@ -32,7 +32,7 @@ if(1) {
       dev.off()
       top_terms_list <- lda_result[[2]]
     }
-    write.table(top_terms_list, file="top_terms.txt")
+    write.table(top_terms_list[[2]], file="top_terms.txt")
   }
 }
 
