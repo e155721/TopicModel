@@ -9,7 +9,7 @@ if(1) {
   file_path <- "../data/"
   #file_name <- "data_500000.txt"
   #file_name <- "a.csv"
-  file_name <- "pubmed_trending-articles.txt"
+  file_name <- "pubmed_trending-articles"
   #file_name <- "alg"
   #file_name <- "allergy_wiki"
   plot_path <- "../plot/"
