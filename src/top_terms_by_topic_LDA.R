@@ -46,7 +46,7 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
     arrange(topic, -beta) # arrange words in descending informativeness
   
   # plot the top ten terms for each topic in order
-  top_terms %>% # take the top terms
+  hoge <- top_terms %>% # take the top terms
     mutate(term = reorder(term, beta)) %>% # sort terms by beta value 
     ggplot(aes(term, beta, fill = factor(topic))) + # plot beta by theme
     geom_col(show.legend = FALSE) + # as a bar plot
@@ -55,7 +55,7 @@ top_terms_by_topic_LDA <- function(input_text, # should be a columm from a dataf
     coord_flip() # turn bars sideways
   
   result <- list(2)
-  result[[1]] <- topics
+  result[[1]] <- hoge
   result[[2]] <- top_terms
   return(result)
 }
