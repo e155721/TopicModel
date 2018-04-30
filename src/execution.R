@@ -4,7 +4,7 @@ source("clean.R")
 
 if(1) {
   #load("../data/list_of_lda_02-10.RData")
-  load("../data/list_of_lda_11-20.RData")
+  #load("../data/list_of_lda_11-20.RData")
   #load("../data/list_of_lda.RData")
   
   file_path <- "../data/"
