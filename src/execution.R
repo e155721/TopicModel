@@ -31,7 +31,7 @@ if(1) {
     path <- paste(plot_path, "top_terms_used_k_", i, ".txt", sep = "")
     print(path)
     print(lda_result[[2]])
-    write.table(lda_result[[2]], file=path)
+    #write.table(lda_result[[2]], file=path)
   }
 }
 
