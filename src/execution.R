@@ -29,8 +29,8 @@ if(1) {
     pdf(file = path)
     plot(lda_result[[1]])
     dev.off()
-    #path <- paste(plot_path, "top_terms_unused_k_", i, ".txt", sep = "")
-    path <- paste(plot_path, "top_terms_used_k_", i, ".txt", sep = "")
+    #path <- paste(plot_path, file_name, "_unused_top_terms_k_", i, ".txt", sep = "")
+    path <- paste(plot_path, file_name, "_used_top_terms_k_", i, ".txt", sep = "")
     write.table(lda_result[[2]], file=path)
   }
 }
