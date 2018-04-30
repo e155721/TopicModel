@@ -4,19 +4,19 @@ source("clean.R")
 
 if(1) {
   #load("../data/list_of_lda_02-10.RData")
-  load("../data/list_of_lda_11-20.RData")
+  #load("../data/list_of_lda_11-20.RData")
   
   file_path <- "../data/"
   #file_name <- "data_500000.txt"
-  #file_name <- "a.csv"
-  file_name <- "pubmed_trending-articles"
+  file_name <- "a.csv"
+  #file_name <- "pubmed_trending-articles"
   #file_name <- "alg"
   #file_name <- "allergy_wiki"
   plot_path <- "../plot/"
   
   file_path <- paste(file_path, file_name, sep = "")
-  #input_text <- read_csv(file_path)$text
-  input_text <- read_file(file_path)
+  input_text <- read_csv(file_path)$text
+  #input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
   for (i in 20:20) {
