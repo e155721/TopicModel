@@ -6,7 +6,7 @@ readFile <- function(dir)
   len <- length(fileVec)
   file <- list(1:len)
   for (i in 1:len) {
-    file[i] <- read_file(paste(fileVec[i]))
+    file[[i]] <- read_file(paste(fileVec[i]))
   }
   return(file)
 }
