@@ -4,7 +4,7 @@ source("clean.R")
 
 if(1) {
   #load("../data/list_of_lda_02-10.RData")
-  load("../data/list_of_lda_11-20.RData")
+  #load("../data/list_of_lda_11-20.RData")
   
   file_path <- "../data/"
   #file_name <- "data_500000.txt"
@@ -29,9 +29,7 @@ if(1) {
     dev.off()
     #path <- paste(plot_path, "top_terms_unused_k_", i, ".txt", sep = "")
     path <- paste(plot_path, "top_terms_used_k_", i, ".txt", sep = "")
-    print(path)
-    print(lda_result[[2]])
-    #write.table(lda_result[[2]], file=path)
+    write.table(lda_result[[2]], file=path)
   }
 }
 
