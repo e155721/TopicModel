@@ -4,7 +4,7 @@ source("clean.R")
 
 if(1) {
   #load("../data/list_of_lda_02-10.RData")
-  #load("../data/list_of_lda_11-20.RData")
+  load("../data/list_of_lda_11-20.RData")
   
   file_path <- "../data/"
   #file_name <- "data_500000.txt"
@@ -19,7 +19,7 @@ if(1) {
   input_text <- read_file(file_path)
   input_text <- clean(input_text)
   
-  for (i in 2:10) {
+  for (i in 20:20) {
     lda_result <- top_terms_by_topic_LDA(input_text, number_of_topics = i)
     path <- paste(plot_path, file_name, "_unused", "_k_", i, ".pdf", sep = "")
     #lda_result <- top_terms_by_topic_LDA(input_text, user_model = list_of_lda[[i-1]])
