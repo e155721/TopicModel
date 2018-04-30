@@ -8,8 +8,8 @@ if(1) {
   #load("../data/list_of_lda.RData")
 
   file_path <- "../data/"
-  file_name <- "data.txt"
-  #file_name <- "data_500000.txt"
+  #file_name <- "data.txt"
+  file_name <- "data_500000.txt"
   #file_name <- "a.csv"
   #file_name <- "pubmed_trending-articles"
   #file_name <- "alg"
